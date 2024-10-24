@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title> Dress up game </title>
+    <style>
+	
+    <div class="main-menu">
+        <img src="Mainmenu.png" alt="Main Menu Image">
+        <button onclick="enterGame()">Play</button>
+    </div>
+    <div class="game-container">
+        <div class="base-container">
+            <!-- Base character image -->
+            <img id="base-image" src="Base.png" alt="Base Image">
+<!-- Panties (category 1) images -->
+<img id="category1-item1" src="Panties1.png" alt="Panties 1" style="visibility: visible;">
+<img id="category1-item2" src="Panties2.png" alt="Panties 2" style="visibility: hidden;">
+<img id="category1-item3" src="Panties3.png" alt="Panties 3" style="visibility: hidden;">
+<img id="category1-item4" src="Panties4.png" alt="Panties 4" style="visibility: hidden;">
+<img id="category1-item5" src="Panties5.png" alt="Panties 5" style="visibility: hidden;">
+<img id="category1-item6" src="Panties6.png" alt="Panties 6" style="visibility: hidden;">
+<img id="category1-item7" src="Panties7.png" alt="Panties 7" style="visibility: hidden;">
+<img id="category1-item8" src="Panties8.png" alt="Panties 8" style="visibility: hidden;">
+<img id="category1-item9" src="Panties9.png" alt="Panties 9" style="visibility: hidden;">
+<img id="category1-item10" src="Panties10.png" alt="Panties 10" style="visibility: hidden;">
+ <!-- Girl Bra (category 2) images -->
+<img id="category2-item1" src="Girlbra1.png" alt="Girl Bra 1" style="visibility: visible;">
+<img id="category2-item2" src="Girlbra2.png" alt="Girl Bra 2" style="visibility: hidden;">
+<img id="category2-item3" src="Girlbra3.png" alt="Girl Bra 3" style="visibility: hidden;">
+<img id="category2-item4" src="Girlbra4.png" alt="Girl Bra 4" style="visibility: hidden;">
+<img id="category2-item5" src="Girlbra5.png" alt="Girl Bra 5" style="visibility: hidden;">
+<img id="category2-item6" src="Girlbra6.png" alt="Girl Bra 6" style="visibility: hidden;">
+<img id="category2-item7" src="Girlbra7.png" alt="Girl Bra 7" style="visibility: hidden;">
+<img id="category2-item8" src="Girlbra8.png" alt="Girl Bra 8" style="visibility: hidden;">
+<img id="category2-item9" src="Girlbra9.png" alt="Girl Bra 9" style="visibility: hidden;">
+<img id="category2-item10" src="Girlbra10.png" alt="Girl Bra 10" style="visibility: hidden;">
+
+<!-- Girl Boxers (category 3) images -->
+<img id="category3-item1" src="Girlboxers1.png" alt="Girl Boxers 1" style="visibility: hidden;">
+<img id="category3-item2" src="Girlboxers2.png" alt="Girl Boxers 2" style="visibility: hidden;">
+<img id="category3-item3" src="Girlboxers3.png" alt="Girl Boxers 3" style="visibility: hidden;">
+<img id="category3-item4" src="Girlboxers4.png" alt="Girl Boxers 4" style="visibility: hidden;">
+<img id="category3-item5" src="Girlboxers5.png" alt="Girl Boxers 5" style="visibility: hidden;">
+<img id="category3-item6" src="Girlboxers6.png" alt="Girl Boxers 6" style="visibility: hidden;">
+<img id="category3-item7" src="Girlboxers7.png" alt="Girl Boxers 7" style="visibility: hidden;">
+<img id="category3-item8" src="Girlboxers8.png" alt="Girl Boxers 8" style="visibility: hidden;">
+<img id="category3-item9" src="Girlboxers9.png" alt="Girl Boxers 9" style="visibility: hidden;">
+<img id="category3-item10" src="Girlboxers10.png" alt="Girl Boxers 10" style="visibility: hidden;">
+
+<!-- Girl Sweatshirt (category 4) images -->
+<img id="category4-item1" src="GirlSweatshirt1.png" alt="Girl Sweatshirt 1" style="visibility: hidden;">
+<img id="category4-item2" src="GirlSweatshirt2.png" alt="Girl Sweatshirt 2" style="visibility: hidden;">
+<img id="category4-item3" src="GirlSweatshirt3.png" alt="Girl Sweatshirt 3" style="visibility: hidden;">
+<img id="category4-item4" src="GirlSweatshirt4.png" alt="Girl Sweatshirt 4" style="visibility: hidden;">
+<img id="category4-item5" src="GirlSweatshirt5.png" alt="Girl Sweatshirt 5" style="visibility: hidden;">
+<img id="category4-item6" src="GirlSweatshirt6.png" alt="Girl Sweatshirt 6" style="visibility: hidden;">
+<img id="category4-item7" src="GirlSweatshirt7.png" alt="Girl Sweatshirt 7" style="visibility: hidden;">
+<img id="category4-item8" src="GirlSweatshirt8.png" alt="Girl Sweatshirt 8" style="visibility: hidden;">
+<img id="category4-item9" src="GirlSweatshirt9.png" alt="Girl Sweatshirt 9" style="visibility: hidden;">
+<img id="category4-item10" src="GirlSweatshirt10.png" alt="Girl Sweatshirt 10" style="visibility: hidden;">
+
+<!-- Boy Sweatshirt (category 5) images -->
+<img id="category5-item1" src="Boysweatshirt1.png" alt="Boy Sweatshirt 1" style="visibility: hidden;">
+<img id="category5-item2" src="Boysweatshirt2.png" alt="Boy Sweatshirt 2" style="visibility: hidden;">
+<img id="category5-item3" src="Boysweatshirt3.png" alt="Boy Sweatshirt 3" style="visibility: hidden;">
+<img id="category5-item4" src="Boysweatshirt4.png" alt="Boy Sweatshirt 4" style="visibility: hidden;">
+<img id="category5-item5" src="Boysweatshirt5.png" alt="Boy Sweatshirt 5" style="visibility: hidden;">
+<img id="category5-item6" src="Boysweatshirt6.png" alt="Boy Sweatshirt 6" style="visibility: hidden;">
+<img id="category5-item7" src="Boysweatshirt7.png" alt="Boy Sweatshirt 7" style="visibility: hidden;">
+<img id="category5-item8" src="Boysweatshirt8.png" alt="Boy Sweatshirt 8" style="visibility: hidden;">
+<img id="category5-item9" src="Boysweatshirt9.png" alt="Boy Sweatshirt 9" style="visibility: hidden;">
+<img id="category5-item10" src="Boysweatshirt10.png" alt="Boy Sweatshirt 10" style="visibility: hidden;">
+
+<!-- Underpants (category 6) images -->
+<img id="category6-item1" src="Underpants1.png" alt="Underpants 1" style="visibility: hidden;">
+<img id="category6-item2" src="Underpants2.png" alt="Underpants 2" style="visibility: hidden;">
+<img id="category6-item3" src="Underpants3.png" alt="Underpants 3" style="visibility: hidden;">
+<img id="category6-item4" src="Underpants4.png" alt="Underpants 4" style="visibility: hidden;">
+<img id="category6-item5" src="Underpants5.png" alt="Underpants 5" style="visibility: hidden;">
+<img id="category6-item6" src="Underpants6.png" alt="Underpants 6" style="visibility: hidden;">
+<img id="category6-item7" src="Underpants7.png" alt="Underpants 7" style="visibility: hidden;">
+<img id="category6-item8" src="Underpants8.png" alt="Underpants 8" style="visibility: hidden;">
+<img id="category6-item9" src="Underpants9.png" alt="Underpants 9" style="visibility: hidden;">
+<img id="category6-item10" src="Underpants10.png" alt="Underpants 10" style="visibility: hidden;">
+
+<!-- Boy Bra (category 7) images -->
+<img id="category7-item1" src="Boybra1.png" alt="Boy Bra 1" style="visibility: hidden;">
+<img id="category7-item2" src="Boybra2.png" alt="Boy Bra 2" style="visibility: hidden;">
+<img id="category7-item3" src="Boybra3.png" alt="Boy Bra 3" style="visibility: hidden;">
+<img id="category7-item4" src="Boybra4.png" alt="Boy Bra 4" style="visibility: hidden;">
+<img id="category7-item5" src="Boybra5.png" alt="Boy Bra 5" style="visibility: hidden;">
+<img id="category7-item6" src="Boybra6.png" alt="Boy Bra 6" style="visibility: hidden;">
+<img id="category7-item7" src="Boybra7.png" alt="Boy Bra 7" style="visibility: hidden;">
+<img id="category7-item8" src="Boybra8.png" alt="Boy Bra 8" style="visibility: hidden;">
+<img id="category7-item9" src="Boybra9.png" alt="Boy Bra 9" style="visibility: hidden;">
+<img id="category7-item10" src="Boybra10.png" alt="Boy Bra 10" style="visibility: hidden;">
+
+<!-- Boy Boxers (category 8) images -->
+<img id="category8-item1" src="Boxers.png" alt="Boy Boxers 1" style="visibility: visible;">
+<img id="category8-item2" src="Boxers2.png" alt="Boy Boxers 2" style="visibility: hidden;">
+<img id="category8-item3" src="Boxers3.png" alt="Boy Boxers 3" style="visibility: hidden;">
+<img id="category8-item4" src="Boxers4.png" alt="Boy Boxers 4" style="visibility: hidden;">
+<img id="category8-item5" src="Boxers5.png" alt="Boy Boxers 5" style="visibility: hidden;">
+<img id="category8-item6" src="Boxers6.png" alt="Boy Boxers 6" style="visibility: hidden;">
+<img id="category8-item7" src="Boxers7.png" alt="Boy Boxers 7" style="visibility: hidden;">
+<img id="category8-item8" src="Boxers8.png" alt="Boy Boxers 8" style="visibility: hidden;">
+<img id="category8-item9" src="Boxers9.png" alt="Boy Boxers 9" style="visibility: hidden;">
+<img id="category8-item10" src="Boxers10.png" alt="Boy Boxers 10" style="visibility: hidden;">
+
+<!-- Girl Shoes (category 9) images -->
+<img id="category9-item1" src="Girlshoes1.png" alt="Girl Shoes 1" style="visibility: hidden;">
+<img id="category9-item2" src="Girlshoes2.png" alt="Girl Shoes 2" style="visibility: hidden;">
+<img id="category9-item3" src="Girlshoes3.png" alt="Girl Shoes 3" style="visibility: hidden;">
+<img id="category9-item4" src="Girlshoes4.png" alt="Girl Shoes 4" style="visibility: hidden;">
+<img id="category9-item5" src="Girlshoes5.png" alt="Girl Shoes 5" style="visibility: hidden;">
+<img id="category9-item6" src="Girlshoes6.png" alt="Girl Shoes 6" style="visibility: hidden;">
+<img id="category9-item7" src="Girlshoes7.png" alt="Girl Shoes 7" style="visibility: hidden;">
+<img id="category9-item8" src="Girlshoes8.png" alt="Girl Shoes 8" style="visibility: hidden;">
+<img id="category9-item9" src="Girlshoes9.png" alt="Girl Shoes 9" style="visibility: hidden;">
+<img id="category9-item10" src="Girlshoes10.png" alt="Girl Shoes 10" style="visibility: hidden;">
+
+<!-- Boy Shoes (category 10) images -->
+<img id="category10-item1" src="Boyshoes1.png" alt="Boy Shoes 1" style="visibility: hidden;">
+<img id="category10-item2" src="Boyshoes2.png" alt="Boy Shoes 2" style="visibility: hidden;">
+<img id="category10-item3" src="Boyshoes3.png" alt="Boy Shoes 3" style="visibility: hidden;">
+<img id="category10-item4" src="Boyshoes4.png" alt="Boy Shoes 4" style="visibility: hidden;">
+<img id="category10-item5" src="Boyshoes5.png" alt="Boy Shoes 5" style="visibility: hidden;">
+<img id="category10-item6" src="Boyshoes6.png" alt="Boy Shoes 6" style="visibility: hidden;">
+<img id="category10-item7" src="Boyshoes7.png" alt="Boy Shoes 7" style="visibility: hidden;">
+<img id="category10-item8" src="Boyshoes8.png" alt="Boy Shoes 8" style="visibility: hidden;">
+<img id="category10-item9" src="Boyshoes9.png" alt="Boy Shoes 9" style="visibility: hidden;">
+<img id="category10-item10" src="Boyshoes10.png" alt="Boy Shoes 10" style="visibility: hidden;">
+
+<!-- Girl Pants (category 11) images -->
+<img id="category11-item1" src="Girlpants1.png" alt="Girl Pants 1" style="visibility: hidden;">
+<img id="category11-item2" src="Girlpants2.png" alt="Girl Pants 2" style="visibility: hidden;">
+<img id="category11-item3" src="Girlpants3.png" alt="Girl Pants 3" style="visibility: hidden;">
+<img id="category11-item4" src="Girlpants4.png" alt="Girl Pants 4" style="visibility: hidden;">
+<img id="category11-item5" src="Girlpants5.png" alt="Girl Pants 5" style="visibility: hidden;">
+<img id="category11-item6" src="Girlpants6.png" alt="Girl Pants 6" style="visibility: hidden;">
+<img id="category11-item7" src="Girlpants7.png" alt="Girl Pants 7" style="visibility: hidden;">
+<img id="category11-item8" src="Girlpants8.png" alt="Girl Pants 8" style="visibility: hidden;">
+<img id="category11-item9" src="Girlpants9.png" alt="Girl Pants 9" style="visibility: hidden;">
+<img id="category11-item10" src="Girlpants10.png" alt="Girl Pants 10" style="visibility: hidden;">
+
+<!-- Boy Pants (category 12) images -->
+<img id="category12-item1" src="Boypants1.png" alt="Boy Pants 1" style="visibility: hidden;">
+<img id="category12-item2" src="Boypants2.png" alt="Boy Pants 2" style="visibility: hidden;">
+<img id="category12-item3" src="Boypants3.png" alt="Boy Pants 3" style="visibility: hidden;">
+<img id="category12-item4" src="Boypants4.png" alt="Boy Pants 4" style="visibility: hidden;">
+<img id="category12-item5" src="Boypants5.png" alt="Boy Pants 5" style="visibility: hidden;">
+<img id="category12-item6" src="Boypants6.png" alt="Boy Pants 6" style="visibility: hidden;">
+<img id="category12-item7" src="Boypants7.png" alt="Boy Pants 7" style="visibility: hidden;">
+<img id="category12-item8" src="Boypants8.png" alt="Boy Pants 8" style="visibility: hidden;">
+<img id="category12-item9" src="Boypants9.png" alt="Boy Pants 9" style="visibility: hidden;">
+<img id="category12-item10" src="Boypants10.png" alt="Boy Pants 10" style="visibility: hidden;">
+
+<!-- Girl Dresses (category 13) images -->
+<img id="category13-item1" src="Girldress1.png" alt="Girl Dress 1" style="visibility: hidden;">
+<img id="category13-item2" src="Girldress2.png" alt="Girl Dress 2" style="visibility: hidden;">
+<img id="category13-item3" src="Girldress3.png" alt="Girl Dress 3" style="visibility: hidden;">
+<img id="category13-item4" src="Girldress4.png" alt="Girl Dress 4" style="visibility: hidden;">
+<img id="category13-item5" src="Girldress5.png" alt="Girl Dress 5" style="visibility: hidden;">
+<img id="category13-item6" src="Girldress6.png" alt="Girl Dress 6" style="visibility: hidden;">
+<img id="category13-item7" src="Girldress7.png" alt="Girl Dress 7" style="visibility: hidden;">
+<img id="category13-item8" src="Girldress8.png" alt="Girl Dress 8" style="visibility: hidden;">
+<img id="category13-item9" src="Girldress9.png" alt="Girl Dress 9" style="visibility: hidden;">
+<img id="category13-item10" src="Girldress10.png" alt="Girl Dress 10" style="visibility: hidden;">
+
+<!-- Girl Top (category 14) images -->
+<img id="category14-item1" src="Girltop1.png" alt="Girl Top 1" style="visibility: hidden;">
+<img id="category14-item2" src="Girltop2.png" alt="Girl Top 2" style="visibility: hidden;">
+<img id="category14-item3" src="Girltop3.png" alt="Girl Top 3" style="visibility: hidden;">
+<img id="category14-item4" src="Girltop4.png" alt="Girl Top 4" style="visibility: hidden;">
+<img id="category14-item5" src="Girltop5.png" alt="Girl Top 5" style="visibility: hidden;">
+<img id="category14-item6" src="Girltop6.png" alt="Girl Top 6" style="visibility: hidden;">
+<img id="category14-item7" src="Girltop7.png" alt="Girl Top 7" style="visibility: hidden;">
+<img id="category14-item8" src="Girltop8.png" alt="Girl Top 8" style="visibility: hidden;">
+<img id="category14-item9" src="Girltop9.png" alt="Girl Top 9" style="visibility: hidden;">
+<img id="category14-item10" src="Girltop10.png" alt="Girl Top 10" style="visibility: hidden;">
+
+<!-- Boy Top (category 15) images -->
+<img id="category15-item1" src="Boytop1.png" alt="Boy Top 1" style="visibility: hidden;">
+<img id="category15-item2" src="Boytop2.png" alt="Boy Top 2" style="visibility: hidden;">
+<img id="category15-item3" src="Boytop3.png" alt="Boy Top 3" style="visibility: hidden;">
+<img id="category15-item4" src="Boytop4.png" alt="Boy Top 4" style="visibility: hidden;">
+<img id="category15-item5" src="Boytop5.png" alt="Boy Top 5" style="visibility: hidden;">
+<img id="category15-item6" src="Boytop6.png" alt="Boy Top 6" style="visibility: hidden;">
+<img id="category15-item7" src="Boytop7.png" alt="Boy Top 7" style="visibility: hidden;">
+<img id="category15-item8" src="Boytop8.png" alt="Boy Top 8" style="visibility: hidden;">
+<img id="category15-item9" src="Boytop9.png" alt="Boy Top 9" style="visibility: hidden;">
+<img id="category15-item10" src="Boytop10.png" alt="Boy Top 10" style="visibility: hidden;">
+
+<!-- Girl Jacket (category 16) images -->
+<img id="category16-item1" src="Girljacket1.png" alt="Girl Jacket 1" style="visibility: hidden;">
+<img id="category16-item2" src="Girljacket2.png" alt="Girl Jacket 2" style="visibility: hidden;">
+<img id="category16-item3" src="Girljacket3.png" alt="Girl Jacket 3" style="visibility: hidden;">
+<img id="category16-item4" src="Girljacket4.png" alt="Girl Jacket 4" style="visibility: hidden;">
+<img id="category16-item5" src="Girljacket5.png" alt="Girl Jacket 5" style="visibility: hidden;">
+<img id="category16-item6" src="Girljacket6.png" alt="Girl Jacket 6" style="visibility: hidden;">
+<img id="category16-item7" src="Girljacket7.png" alt="Girl Jacket 7" style="visibility: hidden;">
+<img id="category16-item8" src="Girljacket8.png" alt="Girl Jacket 8" style="visibility: hidden;">
+<img id="category16-item9" src="Girljacket9.png" alt="Girl Jacket 9" style="visibility: hidden;">
+<img id="category16-item10" src="Girljacket10.png" alt="Girl Jacket 10" style="visibility: hidden;">
+
+<!-- Boy Jacket (category 17) images -->
+<img id="category17-item1" src="Boyjacket1.png" alt="Boy Jacket 1" style="visibility: hidden;">
+<img id="category17-item2" src="Boyjacket2.png" alt="Boy Jacket 2" style="visibility: hidden;">
+<img id="category17-item3" src="Boyjacket3.png" alt="Boy Jacket 3" style="visibility: hidden;">
+<img id="category17-item4" src="Boyjacket4.png" alt="Boy Jacket 4" style="visibility: hidden;">
+<img id="category17-item5" src="Boyjacket5.png" alt="Boy Jacket 5" style="visibility: hidden;">
+<img id="category17-item6" src="Boyjacket6.png" alt="Boy Jacket 6" style="visibility: hidden;">
+<img id="category17-item7" src="Boyjacket7.png" alt="Boy Jacket 7" style="visibility: hidden;">
+<img id="category17-item8" src="Boyjacket8.png" alt="Boy Jacket 8" style="visibility: hidden;">
+<img id="category17-item9" src="Boyjacket9.png" alt="Boy Jacket 9" style="visibility: hidden;">
+<img id="category17-item10" src="Boyjacket10.png" alt="Boy Jacket 10" style="visibility: hidden;">
+
+<!-- Leggings (category 18 for girl and 19 for boy) -->
+<img id="category18-item1" src="Girllegging.png" alt="Girl Legging 1" style="visibility: hidden;">
+<img id="category18-item2" src="Girllegging2.png" alt="Girl Legging 2" style="visibility: hidden;">
+<img id="category18-item3" src="Girllegging3.png" alt="Girl Legging 3" style="visibility: hidden;">
+<img id="category18-item4" src="Girllegging4.png" alt="Girl Legging 4" style="visibility: hidden;">
+<img id="category18-item5" src="Girllegging5.png" alt="Girl Legging 5" style="visibility: hidden;">
+<img id="category18-item6" src="Girllegging6.png" alt="Girl Legging 6" style="visibility: hidden;">
+<img id="category18-item7" src="Girllegging7.png" alt="Girl Legging 7" style="visibility: hidden;">
+<img id="category18-item8" src="Girllegging8.png" alt="Girl Legging 8" style="visibility: hidden;">
+<img id="category18-item9" src="Girllegging9.png" alt="Girl Legging 9" style="visibility: hidden;">
+<img id="category18-item10" src="Girllegging10.png" alt="Girl Legging 10" style="visibility: hidden;">
+
+<img id="category19-item1" src="Boylegging.png" alt="Boy Legging 1" style="visibility: hidden;">
+<img id="category19-item2" src="Boylegging2.png" alt="Boy Legging 2" style="visibility: hidden;">
+<img id="category19-item3" src="Boylegging3.png" alt="Boy Legging 3" style="visibility: hidden;">
+<img id="category19-item4" src="Boylegging4.png" alt="Boy Legging 4" style="visibility: hidden;">
+<img id="category19-item5" src="Boylegging5.png" alt="Boy Legging 5" style="visibility: hidden;">
+<img id="category19-item6" src="Boylegging6.png" alt="Boy Legging 6" style="visibility: hidden;">
+<img id="category19-item7" src="Boylegging7.png" alt="Boy Legging 7" style="visibility: hidden;">
+<img id="category19-item8" src="Boylegging8.png" alt="Boy Legging 8" style="visibility: hidden;">
+<img id="category19-item9" src="Boylegging9.png" alt="Boy Legging 9" style="visibility: hidden;">
+<img id="category19-item10" src="Boylegging10.png" alt="Boy Legging 10" style="visibility: hidden;">
+
+<!-- Accessories (category 20 for girl and 21 for boy) -->
+<img id="category20-item1" src="Girlaccessory1.png" alt="Girl Accessory 1" style="visibility: hidden;">
+<img id="category20-item2" src="Girlaccessory2.png" alt="Girl Accessory 2" style="visibility: hidden;">
+<img id="category20-item3" src="Girlaccessory3.png" alt="Girl Accessory 3" style="visibility: hidden;">
+<img id="category20-item4" src="Girlaccessory4.png" alt="Girl Accessory 4" style="visibility: hidden;">
+<img id="category20-item5" src="Girlaccessory5.png" alt="Girl Accessory 5" style="visibility: hidden;">
+<img id="category20-item6" src="Girlaccessory6.png" alt="Girl Accessory 6" style="visibility: hidden;">
+<img id="category20-item7" src="Girlaccessory7.png" alt="Girl Accessory 7" style="visibility: hidden;">
+<img id="category20-item8" src="Girlaccessory8.png" alt="Girl Accessory 8" style="visibility: hidden;">
+<img id="category20-item9" src="Girlaccessory9.png" alt="Girl Accessory 9" style="visibility: hidden;">
+<img id="category20-item10" src="Girlaccessory10.png" alt="Girl Accessory 10" style="visibility: hidden;">
+
+<img id="category21-item1" src="Boyaccessory1.png" alt="Boy Accessory 1" style="visibility: hidden;">
+<img id="category21-item2" src="Boyaccessory2.png" alt="Boy Accessory 2" style="visibility: hidden;">
+<img id="category21-item3" src="Boyaccessory3.png" alt="Boy Accessory 3" style="visibility: hidden;">
+<img id="category21-item4" src="Boyaccessory4.png" alt="Boy Accessory 4" style="visibility: hidden;">
+<img id="category21-item5" src="Boyaccessory5.png" alt="Boy Accessory 5" style="visibility: hidden;">
+<img id="category21-item6" src="Boyaccessory6.png" alt="Boy Accessory 6" style="visibility: hidden;">
+<img id="category21-item7" src="Boyaccessory7.png" alt="Boy Accessory 7" style="visibility: hidden;">
+<img id="category21-item8" src="Boyaccessory8.png" alt="Boy Accessory 8" style="visibility: hidden;">
+<img id="category21-item9" src="Boyaccessory9.png" alt="Boy Accessory 9" style="visibility: hidden;">
+<img id="category21-item10" src="Boyaccessory10.png" alt="Boy Accessory 10" style="visibility: hidden;">
+
+<!-- Boy Dress (category 22) images -->
+<img id="category22-item1" src="Boydress1.png" alt="Boy Dress 1" style="visibility: hidden;">
+<img id="category22-item2" src="Boydress2.png" alt="Boy Dress 2" style="visibility: hidden;">
+<img id="category22-item3" src="Boydress3.png" alt="Boy Dress 3" style="visibility: hidden;">
+<img id="category22-item4" src="Boydress4.png" alt="Boy Dress 4" style="visibility: hidden;">
+<img id="category22-item5" src="Boydress5.png" alt="Boy Dress 5" style="visibility: hidden;">
+<img id="category22-item6" src="Boydress6.png" alt="Boy Dress 6" style="visibility: hidden;">
+<img id="category22-item7" src="Boydress7.png" alt="Boy Dress 7" style="visibility: hidden;">
+<img id="category22-item8" src="Boydress8.png" alt="Boy Dress 8" style="visibility: hidden;">
+<img id="category22-item9" src="Boydress9.png" alt="Boy Dress 9" style="visibility: hidden;">
+<img id="category22-item10" src="Boydress10.png" alt="Boy Dress 10" style="visibility: hidden;">
+
+            
+<!-- Bodyhat (new category for bodyhat) images -->
+<img id="category23-item1" src="Bodyhat1.png" alt="Bodyhat 1" style="visibility: hidden;">
+<img id="category23-item2" src="Bodyhat2.png" alt="Bodyhat 2" style="visibility: hidden;">
+<img id="category23-item3" src="Bodyhat3.png" alt="Bodyhat 3" style="visibility: hidden;">
+<img id="category23-item4" src="Bodyhat4.png" alt="Bodyhat 4" style="visibility: hidden;">
+<img id="category23-item5" src="Bodyhat5.png" alt="Bodyhat 5" style="visibility: hidden;">
+<img id="category23-item6" src="Bodyhat6.png" alt="Bodyhat 6" style="visibility: hidden;">
+<img id="category23-item7" src="Bodyhat7.png" alt="Bodyhat 7" style="visibility: hidden;">
+<img id="category23-item8" src="Bodyhat8.png" alt="Bodyhat 8" style="visibility: hidden;">
+<img id="category23-item9" src="Bodyhat9.png" alt="Bodyhat 9" style="visibility: hidden;">
+<img id="category23-item10" src="Bodyhat10.png" alt="Bodyhat 10" style="visibility: hidden;">
+
+
+
+
+</div>
+
+       <div class="controls">
+
+<div class="controls">
+    <!-- Left column (Girl clothing items) -->
+    <div class="left-column move-right">
+        
+<div class="category">
+    <div class="section">
+        <h3>Panties</h3>
+        <img src="Panties1b.png" alt="Panties 1 Button" onclick="toggleCategory('category1-item1', ['category1-item2', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties2b.png" alt="Panties 2 Button" onclick="toggleCategory('category1-item2', ['category1-item1', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties3b.png" alt="Panties 3 Button" onclick="toggleCategory('category1-item3', ['category1-item1', 'category1-item2', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties4b.png" alt="Panties 4 Button" onclick="toggleCategory('category1-item4', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties5b.png" alt="Panties 5 Button" onclick="toggleCategory('category1-item5', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item4', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties6b.png" alt="Panties 6 Button" onclick="toggleCategory('category1-item6', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item7', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties7b.png" alt="Panties 7 Button" onclick="toggleCategory('category1-item7', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item8', 'category1-item9', 'category1-item10'])">
+        <img src="Panties8b.png" alt="Panties 8 Button" onclick="toggleCategory('category1-item8', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item9', 'category1-item10'])">
+        <img src="Panties9b.png" alt="Panties 9 Button" onclick="toggleCategory('category1-item9', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item10'])">
+        <img src="Panties10b.png" alt="Panties 10 Button" onclick="toggleCategory('category1-item10', ['category1-item1', 'category1-item2', 'category1-item3', 'category1-item4', 'category1-item5', 'category1-item6', 'category1-item7', 'category1-item8', 'category1-item9'])">
+    </div>
+</div>
+<div class="category">
+    <div class="section">
+        <h3>Girl Bra</h3>
+        <img src="Girlbra1b.png" alt="Girl Bra 1 Button" onclick="toggleCategory('category2-item1', ['category2-item2', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra2b.png" alt="Girl Bra 2 Button" onclick="toggleCategory('category2-item2', ['category2-item1', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra3b.png" alt="Girl Bra 3 Button" onclick="toggleCategory('category2-item3', ['category2-item1', 'category2-item2', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra4b.png" alt="Girl Bra 4 Button" onclick="toggleCategory('category2-item4', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra5b.png" alt="Girl Bra 5 Button" onclick="toggleCategory('category2-item5', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item4', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra6b.png" alt="Girl Bra 6 Button" onclick="toggleCategory('category2-item6', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item7', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra7b.png" alt="Girl Bra 7 Button" onclick="toggleCategory('category2-item7', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item8', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra8b.png" alt="Girl Bra 8 Button" onclick="toggleCategory('category2-item8', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item9', 'category2-item10'])">
+        <img src="Girlbra9b.png" alt="Girl Bra 9 Button" onclick="toggleCategory('category2-item9', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item10'])">
+        <img src="Girlbra10b.png" alt="Girl Bra 10 Button" onclick="toggleCategory('category2-item10', ['category2-item1', 'category2-item2', 'category2-item3', 'category2-item4', 'category2-item5', 'category2-item6', 'category2-item7', 'category2-item8', 'category2-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Girl Pants</h3>
+        <img src="Girlpants1b.png" alt="Girl Pants 1 Button" onclick="toggleCategory('category11-item1', ['category11-item2', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants2b.png" alt="Girl Pants 2 Button" onclick="toggleCategory('category11-item2', ['category11-item1', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants3b.png" alt="Girl Pants 3 Button" onclick="toggleCategory('category11-item3', ['category11-item1', 'category11-item2', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants4b.png" alt="Girl Pants 4 Button" onclick="toggleCategory('category11-item4', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants5b.png" alt="Girl Pants 5 Button" onclick="toggleCategory('category11-item5', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item4', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants6b.png" alt="Girl Pants 6 Button" onclick="toggleCategory('category11-item6', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item7', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants7b.png" alt="Girl Pants 7 Button" onclick="toggleCategory('category11-item7', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item8', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants8b.png" alt="Girl Pants 8 Button" onclick="toggleCategory('category11-item8', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item9', 'category11-item10'])">
+        <img src="Girlpants9b.png" alt="Girl Pants 9 Button" onclick="toggleCategory('category11-item9', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item10'])">
+        <img src="Girlpants10b.png" alt="Girl Pants 10 Button" onclick="toggleCategory('category11-item10', ['category11-item1', 'category11-item2', 'category11-item3', 'category11-item4', 'category11-item5', 'category11-item6', 'category11-item7', 'category11-item8', 'category11-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Pants</h3>
+        <img src="Boypants1b.png" alt="Boy Pants 1 Button" onclick="toggleCategory('category12-item1', ['category12-item2', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants2b.png" alt="Boy Pants 2 Button" onclick="toggleCategory('category12-item2', ['category12-item1', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants3b.png" alt="Boy Pants 3 Button" onclick="toggleCategory('category12-item3', ['category12-item1', 'category12-item2', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants4b.png" alt="Boy Pants 4 Button" onclick="toggleCategory('category12-item4', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants5b.png" alt="Boy Pants 5 Button" onclick="toggleCategory('category12-item5', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item4', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants6b.png" alt="Boy Pants 6 Button" onclick="toggleCategory('category12-item6', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item7', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants7b.png" alt="Boy Pants 7 Button" onclick="toggleCategory('category12-item7', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item8', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants8b.png" alt="Boy Pants 8 Button" onclick="toggleCategory('category12-item8', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item9', 'category12-item10'])">
+        <img src="Boypants9b.png" alt="Boy Pants 9 Button" onclick="toggleCategory('category12-item9', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item10'])">
+        <img src="Boypants10b.png" alt="Boy Pants 10 Button" onclick="toggleCategory('category12-item10', ['category12-item1', 'category12-item2', 'category12-item3', 'category12-item4', 'category12-item5', 'category12-item6', 'category12-item7', 'category12-item8', 'category12-item9'])">
+    </div>
+</div>
+<div class="category">
+    <div class="section">
+        <h3>Girl Dress</h3>
+        <img src="Girldress1b.png" alt="Girl Dress 1 Button" onclick="toggleCategory('category13-item1', ['category13-item2', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress2b.png" alt="Girl Dress 2 Button" onclick="toggleCategory('category13-item2', ['category13-item1', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress3b.png" alt="Girl Dress 3 Button" onclick="toggleCategory('category13-item3', ['category13-item1', 'category13-item2', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress4b.png" alt="Girl Dress 4 Button" onclick="toggleCategory('category13-item4', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress5b.png" alt="Girl Dress 5 Button" onclick="toggleCategory('category13-item5', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item4', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress6b.png" alt="Girl Dress 6 Button" onclick="toggleCategory('category13-item6', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item7', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress7b.png" alt="Girl Dress 7 Button" onclick="toggleCategory('category13-item7', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item8', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress8b.png" alt="Girl Dress 8 Button" onclick="toggleCategory('category13-item8', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item9', 'category13-item10'])">
+        <img src="Girldress9b.png" alt="Girl Dress 9 Button" onclick="toggleCategory('category13-item9', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item10'])">
+        <img src="Girldress10b.png" alt="Girl Dress 10 Button" onclick="toggleCategory('category13-item10', ['category13-item1', 'category13-item2', 'category13-item3', 'category13-item4', 'category13-item5', 'category13-item6', 'category13-item7', 'category13-item8', 'category13-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Girl Top</h3>
+        <img src="Girltop1b.png" alt="Girl Top 1 Button" onclick="toggleCategory('category14-item1', ['category14-item2', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop2b.png" alt="Girl Top 2 Button" onclick="toggleCategory('category14-item2', ['category14-item1', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop3b.png" alt="Girl Top 3 Button" onclick="toggleCategory('category14-item3', ['category14-item1', 'category14-item2', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop4b.png" alt="Girl Top 4 Button" onclick="toggleCategory('category14-item4', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop5b.png" alt="Girl Top 5 Button" onclick="toggleCategory('category14-item5', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item4', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop6b.png" alt="Girl Top 6 Button" onclick="toggleCategory('category14-item6', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item7', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop7b.png" alt="Girl Top 7 Button" onclick="toggleCategory('category14-item7', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item8', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop8b.png" alt="Girl Top 8 Button" onclick="toggleCategory('category14-item8', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item9', 'category14-item10'])">
+        <img src="Girltop9b.png" alt="Girl Top 9 Button" onclick="toggleCategory('category14-item9', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item10'])">
+        <img src="Girltop10b.png" alt="Girl Top 10 Button" onclick="toggleCategory('category14-item10', ['category14-item1', 'category14-item2', 'category14-item3', 'category14-item4', 'category14-item5', 'category14-item6', 'category14-item7', 'category14-item8', 'category14-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Girl Jacket</h3>
+        <img src="Girljacket1b.png" alt="Girl Jacket 1 Button" onclick="toggleCategory('category16-item1', ['category16-item2', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket2b.png" alt="Girl Jacket 2 Button" onclick="toggleCategory('category16-item2', ['category16-item1', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket3b.png" alt="Girl Jacket 3 Button" onclick="toggleCategory('category16-item3', ['category16-item1', 'category16-item2', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket4b.png" alt="Girl Jacket 4 Button" onclick="toggleCategory('category16-item4', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket5b.png" alt="Girl Jacket 5 Button" onclick="toggleCategory('category16-item5', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item4', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket6b.png" alt="Girl Jacket 6 Button" onclick="toggleCategory('category16-item6', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item7', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket7b.png" alt="Girl Jacket 7 Button" onclick="toggleCategory('category16-item7', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item8', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket8b.png" alt="Girl Jacket 8 Button" onclick="toggleCategory('category16-item8', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item9', 'category16-item10'])">
+        <img src="Girljacket9b.png" alt="Girl Jacket 9 Button" onclick="toggleCategory('category16-item9', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item10'])">
+        <img src="Girljacket10b.png" alt="Girl Jacket 10 Button" onclick="toggleCategory('category16-item10', ['category16-item1', 'category16-item2', 'category16-item3', 'category16-item4', 'category16-item5', 'category16-item6', 'category16-item7', 'category16-item8', 'category16-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Girl Leggings</h3>
+        <img src="Girlleggingb.png" alt="Girl Legging 1 Button" onclick="toggleCategory('category18-item1', ['category18-item2', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging2b.png" alt="Girl Legging 2 Button" onclick="toggleCategory('category18-item2', ['category18-item1', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging3b.png" alt="Girl Legging 3 Button" onclick="toggleCategory('category18-item3', ['category18-item1', 'category18-item2', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging4b.png" alt="Girl Legging 4 Button" onclick="toggleCategory('category18-item4', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging5b.png" alt="Girl Legging 5 Button" onclick="toggleCategory('category18-item5', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item4', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging6b.png" alt="Girl Legging 6 Button" onclick="toggleCategory('category18-item6', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item7', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging7b.png" alt="Girl Legging 7 Button" onclick="toggleCategory('category18-item7', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item8', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging8b.png" alt="Girl Legging 8 Button" onclick="toggleCategory('category18-item8', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item9', 'category18-item10'])">
+        <img src="Girllegging9b.png" alt="Girl Legging 9 Button" onclick="toggleCategory('category18-item9', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item10'])">
+        <img src="Girllegging10b.png" alt="Girl Legging 10 Button" onclick="toggleCategory('category18-item10', ['category18-item1', 'category18-item2', 'category18-item3', 'category18-item4', 'category18-item5', 'category18-item6', 'category18-item7', 'category18-item8', 'category18-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Girl Accessories</h3>
+        <img src="Girlaccessory1b.png" alt="Girl Accessory 1 Button" onclick="toggleCategory('category20-item1', ['category20-item2', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory2b.png" alt="Girl Accessory 2 Button" onclick="toggleCategory('category20-item2', ['category20-item1', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory3b.png" alt="Girl Accessory 3 Button" onclick="toggleCategory('category20-item3', ['category20-item1', 'category20-item2', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory4b.png" alt="Girl Accessory 4 Button" onclick="toggleCategory('category20-item4', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory5b.png" alt="Girl Accessory 5 Button" onclick="toggleCategory('category20-item5', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item4', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory6b.png" alt="Girl Accessory 6 Button" onclick="toggleCategory('category20-item6', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item7', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory7b.png" alt="Girl Accessory 7 Button" onclick="toggleCategory('category20-item7', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item8', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory8b.png" alt="Girl Accessory 8 Button" onclick="toggleCategory('category20-item8', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item9', 'category20-item10'])">
+        <img src="Girlaccessory9b.png" alt="Girl Accessory 9 Button" onclick="toggleCategory('category20-item9', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item10'])">
+        <img src="Girlaccessory10b.png" alt="Girl Accessory 10 Button" onclick="toggleCategory('category20-item10', ['category20-item1', 'category20-item2', 'category20-item3', 'category20-item4', 'category20-item5', 'category20-item6', 'category20-item7', 'category20-item8', 'category20-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Accessories</h3>
+        <img src="Boyaccessory1b.png" alt="Boy Accessory 1 Button" onclick="toggleCategory('category21-item1', ['category21-item2', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory2b.png" alt="Boy Accessory 2 Button" onclick="toggleCategory('category21-item2', ['category21-item1', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory3b.png" alt="Boy Accessory 3 Button" onclick="toggleCategory('category21-item3', ['category21-item1', 'category21-item2', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory4b.png" alt="Boy Accessory 4 Button" onclick="toggleCategory('category21-item4', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory5b.png" alt="Boy Accessory 5 Button" onclick="toggleCategory('category21-item5', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item4', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory6b.png" alt="Boy Accessory 6 Button" onclick="toggleCategory('category21-item6', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item7', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory7b.png" alt="Boy Accessory 7 Button" onclick="toggleCategory('category21-item7', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item8', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory8b.png" alt="Boy Accessory 8 Button" onclick="toggleCategory('category21-item8', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item9', 'category21-item10'])">
+        <img src="Boyaccessory9b.png" alt="Boy Accessory 9 Button" onclick="toggleCategory('category21-item9', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item10'])">
+        <img src="Boyaccessory10b.png" alt="Boy Accessory 10 Button" onclick="toggleCategory('category21-item10', ['category21-item1', 'category21-item2', 'category21-item3', 'category21-item4', 'category21-item5', 'category21-item6', 'category21-item7', 'category21-item8', 'category21-item9'])">
+    </div>
+</div>
+<div class="category">
+    <div class="section">
+        <h3>Girl Sweatshirt</h3>
+        <img src="GirlSweatshirt1b.png" alt="Girl Sweatshirt 1 Button" onclick="toggleCategory('category4-item1', ['category4-item2', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt2b.png" alt="Girl Sweatshirt 2 Button" onclick="toggleCategory('category4-item2', ['category4-item1', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt3b.png" alt="Girl Sweatshirt 3 Button" onclick="toggleCategory('category4-item3', ['category4-item1', 'category4-item2', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt4b.png" alt="Girl Sweatshirt 4 Button" onclick="toggleCategory('category4-item4', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt5b.png" alt="Girl Sweatshirt 5 Button" onclick="toggleCategory('category4-item5', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item4', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt6b.png" alt="Girl Sweatshirt 6 Button" onclick="toggleCategory('category4-item6', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item7', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt7b.png" alt="Girl Sweatshirt 7 Button" onclick="toggleCategory('category4-item7', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item8', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt8b.png" alt="Girl Sweatshirt 8 Button" onclick="toggleCategory('category4-item8', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item9', 'category4-item10'])">
+        <img src="GirlSweatshirt9b.png" alt="Girl Sweatshirt 9 Button" onclick="toggleCategory('category4-item9', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item10'])">
+        <img src="GirlSweatshirt10b.png" alt="Girl Sweatshirt 10 Button" onclick="toggleCategory('category4-item10', ['category4-item1', 'category4-item2', 'category4-item3', 'category4-item4', 'category4-item5', 'category4-item6', 'category4-item7', 'category4-item8', 'category4-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Girl Shoes</h3>
+        <img src="Girlshoes1b.png" alt="Girl Shoes 1 Button" onclick="toggleCategory('category9-item1', ['category9-item2', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes2b.png" alt="Girl Shoes 2 Button" onclick="toggleCategory('category9-item2', ['category9-item1', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes3b.png" alt="Girl Shoes 3 Button" onclick="toggleCategory('category9-item3', ['category9-item1', 'category9-item2', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes4b.png" alt="Girl Shoes 4 Button" onclick="toggleCategory('category9-item4', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes5b.png" alt="Girl Shoes 5 Button" onclick="toggleCategory('category9-item5', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item4', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes6b.png" alt="Girl Shoes 6 Button" onclick="toggleCategory('category9-item6', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item7', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes7b.png" alt="Girl Shoes 7 Button" onclick="toggleCategory('category9-item7', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item8', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes8b.png" alt="Girl Shoes 8 Button" onclick="toggleCategory('category9-item8', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item9', 'category9-item10'])">
+        <img src="Girlshoes9b.png" alt="Girl Shoes 9 Button" onclick="toggleCategory('category9-item9', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item10'])">
+        <img src="Girlshoes10b.png" alt="Girl Shoes 10 Button" onclick="toggleCategory('category9-item10', ['category9-item1', 'category9-item2', 'category9-item3', 'category9-item4', 'category9-item5', 'category9-item6', 'category9-item7', 'category9-item8', 'category9-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Sweatshirt</h3>
+        <img src="Boysweatshirt1b.png" alt="Boy Sweatshirt 1 Button" onclick="toggleCategory('category5-item1', ['category5-item2', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt2b.png" alt="Boy Sweatshirt 2 Button" onclick="toggleCategory('category5-item2', ['category5-item1', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt3b.png" alt="Boy Sweatshirt 3 Button" onclick="toggleCategory('category5-item3', ['category5-item1', 'category5-item2', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt4b.png" alt="Boy Sweatshirt 4 Button" onclick="toggleCategory('category5-item4', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt5b.png" alt="Boy Sweatshirt 5 Button" onclick="toggleCategory('category5-item5', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item4', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt6b.png" alt="Boy Sweatshirt 6 Button" onclick="toggleCategory('category5-item6', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item7', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt7b.png" alt="Boy Sweatshirt 7 Button" onclick="toggleCategory('category5-item7', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item8', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt8b.png" alt="Boy Sweatshirt 8 Button" onclick="toggleCategory('category5-item8', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item9', 'category5-item10'])">
+        <img src="Boysweatshirt9b.png" alt="Boy Sweatshirt 9 Button" onclick="toggleCategory('category5-item9', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item10'])">
+        <img src="Boysweatshirt10b.png" alt="Boy Sweatshirt 10 Button" onclick="toggleCategory('category5-item10', ['category5-item1', 'category5-item2', 'category5-item3', 'category5-item4', 'category5-item5', 'category5-item6', 'category5-item7', 'category5-item8', 'category5-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Shoes</h3>
+        <img src="Boyshoes1b.png" alt="Boy Shoes 1 Button" onclick="toggleCategory('category10-item1', ['category10-item2', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes2b.png" alt="Boy Shoes 2 Button" onclick="toggleCategory('category10-item2', ['category10-item1', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes3b.png" alt="Boy Shoes 3 Button" onclick="toggleCategory('category10-item3', ['category10-item1', 'category10-item2', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes4b.png" alt="Boy Shoes 4 Button" onclick="toggleCategory('category10-item4', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes5b.png" alt="Boy Shoes 5 Button" onclick="toggleCategory('category10-item5', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item4', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes6b.png" alt="Boy Shoes 6 Button" onclick="toggleCategory('category10-item6', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item7', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes7b.png" alt="Boy Shoes 7 Button" onclick="toggleCategory('category10-item7', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item8', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes8b.png" alt="Boy Shoes 8 Button" onclick="toggleCategory('category10-item8', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item9', 'category10-item10'])">
+        <img src="Boyshoes9b.png" alt="Boy Shoes 9 Button" onclick="toggleCategory('category10-item9', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item10'])">
+       <img src="Boyshoes10b.png" alt="Boy Shoes 10 Button" 
+     onclick="toggleCategory('category10-item10', ['category10-item1', 'category10-item2', 'category10-item3', 'category10-item4', 'category10-item5', 'category10-item6', 'category10-item7', 'category10-item8', 'category10-item9'])">
+</div>
+                </div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Boxers</h3>
+        <img src="Boxersb.png" alt="Boy Boxers 1 Button" onclick="toggleCategory('category8-item1', ['category8-item2', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers2b.png" alt="Boy Boxers 2 Button" onclick="toggleCategory('category8-item2', ['category8-item1', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers3b.png" alt="Boy Boxers 3 Button" onclick="toggleCategory('category8-item3', ['category8-item1', 'category8-item2', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers4b.png" alt="Boy Boxers 4 Button" onclick="toggleCategory('category8-item4', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers5b.png" alt="Boy Boxers 5 Button" onclick="toggleCategory('category8-item5', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item4', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers6b.png" alt="Boy Boxers 6 Button" onclick="toggleCategory('category8-item6', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item7', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers7b.png" alt="Boy Boxers 7 Button" onclick="toggleCategory('category8-item7', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item8', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers8b.png" alt="Boy Boxers 8 Button" onclick="toggleCategory('category8-item8', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item9', 'category8-item10'])">
+        <img src="Boxers9b.png" alt="Boy Boxers 9 Button" onclick="toggleCategory('category8-item9', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item10'])">
+        <img src="Boxers10b.png" alt="Boy Boxers 10 Button" onclick="toggleCategory('category8-item10', ['category8-item1', 'category8-item2', 'category8-item3', 'category8-item4', 'category8-item5', 'category8-item6', 'category8-item7', 'category8-item8', 'category8-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Bra</h3>
+        <img src="Boybra1b.png" alt="Boy Bra 1 Button" onclick="toggleCategory('category7-item1', ['category7-item2', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra2b.png" alt="Boy Bra 2 Button" onclick="toggleCategory('category7-item2', ['category7-item1', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra3b.png" alt="Boy Bra 3 Button" onclick="toggleCategory('category7-item3', ['category7-item1', 'category7-item2', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra4b.png" alt="Boy Bra 4 Button" onclick="toggleCategory('category7-item4', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra5b.png" alt="Boy Bra 5 Button" onclick="toggleCategory('category7-item5', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item4', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra6b.png" alt="Boy Bra 6 Button" onclick="toggleCategory('category7-item6', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item7', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra7b.png" alt="Boy Bra 7 Button" onclick="toggleCategory('category7-item7', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item8', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra8b.png" alt="Boy Bra 8 Button" onclick="toggleCategory('category7-item8', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item9', 'category7-item10'])">
+        <img src="Boybra9b.png" alt="Boy Bra 9 Button" onclick="toggleCategory('category7-item9', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item10'])">
+        <img src="Boybra10b.png" alt="Boy Bra 10 Button" onclick="toggleCategory('category7-item10', ['category7-item1', 'category7-item2', 'category7-item3', 'category7-item4', 'category7-item5', 'category7-item6', 'category7-item7', 'category7-item8', 'category7-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Underpants</h3>
+        <img src="Underpants1b.png" alt="Underpants 1 Button" onclick="toggleCategory('category6-item1', ['category6-item2', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants2b.png" alt="Underpants 2 Button" onclick="toggleCategory('category6-item2', ['category6-item1', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants3b.png" alt="Underpants 3 Button" onclick="toggleCategory('category6-item3', ['category6-item1', 'category6-item2', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants4b.png" alt="Underpants 4 Button" onclick="toggleCategory('category6-item4', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants5b.png" alt="Underpants 5 Button" onclick="toggleCategory('category6-item5', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item4', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants6b.png" alt="Underpants 6 Button" onclick="toggleCategory('category6-item6', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item7', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants7b.png" alt="Underpants 7 Button" onclick="toggleCategory('category6-item7', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item8', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants8b.png" alt="Underpants 8 Button" onclick="toggleCategory('category6-item8', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item9', 'category6-item10'])">
+        <img src="Underpants9b.png" alt="Underpants 9 Button" onclick="toggleCategory('category6-item9', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item10'])">
+        <img src="Underpants10b.png" alt="Underpants 10 Button" onclick="toggleCategory('category6-item10', ['category6-item1', 'category6-item2', 'category6-item3', 'category6-item4', 'category6-item5', 'category6-item6', 'category6-item7', 'category6-item8', 'category6-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Leggings</h3>
+        <img src="Boyleggingb.png" alt="Boy Legging 1 Button" onclick="toggleCategory('category19-item1', ['category19-item2', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging2b.png" alt="Boy Legging 2 Button" onclick="toggleCategory('category19-item2', ['category19-item1', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging3b.png" alt="Boy Legging 3 Button" onclick="toggleCategory('category19-item3', ['category19-item1', 'category19-item2', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging4b.png" alt="Boy Legging 4 Button" onclick="toggleCategory('category19-item4', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging5b.png" alt="Boy Legging 5 Button" onclick="toggleCategory('category19-item5', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item4', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging6b.png" alt="Boy Legging 6 Button" onclick="toggleCategory('category19-item6', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item7', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging7b.png" alt="Boy Legging 7 Button" onclick="toggleCategory('category19-item7', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item8', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging8b.png" alt="Boy Legging 8 Button" onclick="toggleCategory('category19-item8', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item9', 'category19-item10'])">
+        <img src="Boylegging9b.png" alt="Boy Legging 9 Button" onclick="toggleCategory('category19-item9', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item10'])">
+        <img src="Boylegging10b.png" alt="Boy Legging 10 Button" onclick="toggleCategory('category19-item10', ['category19-item1', 'category19-item2', 'category19-item3', 'category19-item4', 'category19-item5', 'category19-item6', 'category19-item7', 'category19-item8', 'category19-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Top</h3>
+        <img src="Boytop1b.png" alt="Boy Top 1 Button" onclick="toggleCategory('category15-item1', ['category15-item2', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop2b.png" alt="Boy Top 2 Button" onclick="toggleCategory('category15-item2', ['category15-item1', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop3b.png" alt="Boy Top 3 Button" onclick="toggleCategory('category15-item3', ['category15-item1', 'category15-item2', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop4b.png" alt="Boy Top 4 Button" onclick="toggleCategory('category15-item4', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop5b.png" alt="Boy Top 5 Button" onclick="toggleCategory('category15-item5', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item4', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop6b.png" alt="Boy Top 6 Button" onclick="toggleCategory('category15-item6', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item7', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop7b.png" alt="Boy Top 7 Button" onclick="toggleCategory('category15-item7', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item8', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop8b.png" alt="Boy Top 8 Button" onclick="toggleCategory('category15-item8', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item9', 'category15-item10'])">
+        <img src="Boytop9b.png" alt="Boy Top 9 Button" onclick="toggleCategory('category15-item9', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item10'])">
+        <img src="Boytop10b.png" alt="Boy Top 10 Button" onclick="toggleCategory('category15-item10', ['category15-item1', 'category15-item2', 'category15-item3', 'category15-item4', 'category15-item5', 'category15-item6', 'category15-item7', 'category15-item8', 'category15-item9'])">
+    </div>
+</div>
+
+<div class="category">
+    <div class="section">
+        <h3>Boy Jacket</h3>
+        <img src="Boyjacket1b.png" alt="Boy Jacket 1 Button" onclick="toggleCategory('category17-item1', ['category17-item2', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket2b.png" alt="Boy Jacket 2 Button" onclick="toggleCategory('category17-item2', ['category17-item1', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket3b.png" alt="Boy Jacket 3 Button" onclick="toggleCategory('category17-item3', ['category17-item1', 'category17-item2', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket4b.png" alt="Boy Jacket 4 Button" onclick="toggleCategory('category17-item4', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket5b.png" alt="Boy Jacket 5 Button" onclick="toggleCategory('category17-item5', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item4', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket6b.png" alt="Boy Jacket 6 Button" onclick="toggleCategory('category17-item6', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item7', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket7b.png" alt="Boy Jacket 7 Button" onclick="toggleCategory('category17-item7', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item8', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket8b.png" alt="Boy Jacket 8 Button" onclick="toggleCategory('category17-item8', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item9', 'category17-item10'])">
+        <img src="Boyjacket9b.png" alt="Boy Jacket 9 Button" onclick="toggleCategory('category17-item9', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item10'])">
+        <img src="Boyjacket10b.png" alt="Boy Jacket 10 Button" onclick="toggleCategory('category17-item10', ['category17-item1', 'category17-item2', 'category17-item3', 'category17-item4', 'category17-item5', 'category17-item6', 'category17-item7', 'category17-item8', 'category17-item9'])">
+    </div>
+</div>
+<div class="category">
+    <div class="section">
+        <h3>Boy dress</h3>
+<!-- Boy Dress (category 22) buttons -->
+<img src="Boydress1b.png" alt="Boy Dress 1 Button" onclick="toggleCategory('category22-item1', ['category22-item2', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress2b.png" alt="Boy Dress 2 Button" onclick="toggleCategory('category22-item2', ['category22-item1', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress3b.png" alt="Boy Dress 3 Button" onclick="toggleCategory('category22-item3', ['category22-item1', 'category22-item2', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress4b.png" alt="Boy Dress 4 Button" onclick="toggleCategory('category22-item4', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress5b.png" alt="Boy Dress 5 Button" onclick="toggleCategory('category22-item5', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item4', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress6b.png" alt="Boy Dress 6 Button" onclick="toggleCategory('category22-item6', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item7', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress7b.png" alt="Boy Dress 7 Button" onclick="toggleCategory('category22-item7', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item8', 'category22-item9', 'category22-item10'])">
+<img src="Boydress8b.png" alt="Boy Dress 8 Button" onclick="toggleCategory('category22-item8', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item9', 'category22-item10'])">
+<img src="Boydress9b.png" alt="Boy Dress 9 Button" onclick="toggleCategory('category22-item9', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item10'])">
+<img src="Boydress10b.png" alt="Boy Dress 10 Button" onclick="toggleCategory('category22-item10', ['category22-item1', 'category22-item2', 'category22-item3', 'category22-item4', 'category22-item5', 'category22-item6', 'category22-item7', 'category22-item8', 'category22-item9'])">
+                               </div>
+                </div>
+				<!-- Bodyhat Buttons -->
+<div class="category">
+    <div class="section">
+        <h3>Bodyhat</h3>
+        <img src="Bodyhat1b.png" alt="Bodyhat 1 Button" onclick="toggleCategory('category23-item1', ['category23-item2', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat2b.png" alt="Bodyhat 2 Button" onclick="toggleCategory('category23-item2', ['category23-item1', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat3b.png" alt="Bodyhat 3 Button" onclick="toggleCategory('category23-item3', ['category23-item1', 'category23-item2', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat4b.png" alt="Bodyhat 4 Button" onclick="toggleCategory('category23-item4', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat5b.png" alt="Bodyhat 5 Button" onclick="toggleCategory('category23-item5', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item4', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat6b.png" alt="Bodyhat 6 Button" onclick="toggleCategory('category23-item6', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item7', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat7b.png" alt="Bodyhat 7 Button" onclick="toggleCategory('category23-item7', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item8', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat8b.png" alt="Bodyhat 8 Button" onclick="toggleCategory('category23-item8', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item9', 'category23-item10'])">
+        <img src="Bodyhat9b.png" alt="Bodyhat 9 Button" onclick="toggleCategory('category23-item9', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item10'])">
+        <img src="Bodyhat10b.png" alt="Bodyhat 10 Button" onclick="toggleCategory('category23-item10', ['category23-item1', 'category23-item2', 'category23-item3', 'category23-item4', 'category23-item5', 'category23-item6', 'category23-item7', 'category23-item8', 'category23-item9'])">
+    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+ </style>
+</head>
+<body>
