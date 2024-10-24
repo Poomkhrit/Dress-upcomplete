@@ -1,0 +1,375 @@
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .game-container, .main-menu {
+            text-align: center;
+            width: 100%;
+        }
+
+        .main-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main-menu img {
+            width: 500px;
+            height: auto;
+        }
+
+        .main-menu button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #6200ea;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .main-menu button:hover {
+            background-color: #3700b3;
+        }
+
+        .game-container {
+            display: none;
+        }
+
+        .base-container {
+            position: relative;
+            width: 500px;
+            height: 700px;
+            margin: 20px auto 0 auto;
+        }
+
+        .base-container img {
+            width: 500px;
+            height: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        
+/* Base image */
+#base-image {
+    z-index: 1;
+}
+/* Tops, Bottoms, Dresses: 7th layer */
+#category13-item1, 
+#category13-item2, 
+#category13-item3, 
+#category13-item4, 
+#category13-item5, 
+#category13-item6, 
+#category13-item7, 
+#category13-item8, 
+#category13-item9, 
+#category13-item10, /* Girl Dress */
+#category14-item1, 
+#category14-item2, 
+#category14-item3, 
+#category14-item4, 
+#category14-item5, 
+#category14-item6, 
+#category14-item7, 
+#category14-item8, 
+#category14-item9, 
+#category14-item10, /* Girl Top */
+#category15-item1, 
+#category15-item2, 
+#category15-item3, 
+#category15-item4, 
+#category15-item5, 
+#category15-item6, 
+#category15-item7, 
+#category15-item8, 
+#category15-item9, 
+#category15-item10, /* Boy Top */
+#category11-item1, 
+#category11-item2, 
+#category11-item3, 
+#category11-item4, 
+#category11-item5, 
+#category11-item6, 
+#category11-item7, 
+#category11-item8, 
+#category11-item9, 
+#category11-item10, /* Girl Pants */
+#category12-item1, 
+#category12-item2, 
+#category12-item3, 
+#category12-item4, 
+#category12-item5, 
+#category12-item6, 
+#category12-item7, 
+#category12-item8, 
+#category12-item9, 
+#category12-item10, /* Boy Pants */
+#category22-item1, 
+#category22-item2, 
+#category22-item3, 
+#category22-item4, 
+#category22-item5, 
+#category22-item6, 
+#category22-item7, 
+#category22-item8, 
+#category22-item9, 
+#category22-item10 {
+    z-index: 7;
+}
+
+/* Bodyhat (category 23) - 2nd layer */
+#category23-item1, 
+#category23-item2, 
+#category23-item3, 
+#category23-item4, 
+#category23-item5, 
+#category23-item6, 
+#category23-item7, 
+#category23-item8, 
+#category23-item9, 
+#category23-item10 {
+    z-index: 2;
+}
+
+/* Leggings (category 18 for girl, 19 for boy) - 3rd layer */
+#category18-item1, 
+#category18-item2, 
+#category18-item3, 
+#category18-item4, 
+#category18-item5, 
+#category18-item6, 
+#category18-item7, 
+#category18-item8, 
+#category18-item9, 
+#category18-item10, /* Girl Leggings */
+#category19-item1, 
+#category19-item2, 
+#category19-item3, 
+#category19-item4, 
+#category19-item5, 
+#category19-item6, 
+#category19-item7, 
+#category19-item8, 
+#category19-item9, 
+#category19-item10 { /* Boy Leggings */
+    z-index: 3;
+}
+
+/* Underpants, Panties, Boy/Girl Bra: 4th layer */
+#category1-item1, 
+#category1-item2, 
+#category1-item3, 
+#category1-item4, 
+#category1-item5, 
+#category1-item6, 
+#category1-item7, 
+#category1-item8, 
+#category1-item9, 
+#category1-item10, /* Panties */
+#category2-item1, 
+#category2-item2, 
+#category2-item3, 
+#category2-item4, 
+#category2-item5, 
+#category2-item6, 
+#category2-item7, 
+#category2-item8, 
+#category2-item9, 
+#category2-item10, /* Girl Bra */
+#category6-item1, 
+#category6-item2, 
+#category6-item3, 
+#category6-item4, 
+#category6-item5, 
+#category6-item6, 
+#category6-item7, 
+#category6-item8, 
+#category6-item9, 
+#category6-item10, /* Underpants */
+#category7-item1, 
+#category7-item2, 
+#category7-item3, 
+#category7-item4, 
+#category7-item5, 
+#category7-item6, 
+#category7-item7, 
+#category7-item8, 
+#category7-item9, 
+#category7-item10 { /* Boy Bra */
+    z-index: 4;
+}
+
+/* Boy/Girl Boxers: 5th layer */
+#category3-item1, 
+#category3-item2, 
+#category3-item3, 
+#category3-item4, 
+#category3-item5, 
+#category3-item6, 
+#category3-item7, 
+#category3-item8, 
+#category3-item9, 
+#category3-item10, /* Girl Boxers */
+#category8-item1, 
+#category8-item2, 
+#category8-item3, 
+#category8-item4, 
+#category8-item5, 
+#category8-item6, 
+#category8-item7, 
+#category8-item8, 
+#category8-item9, 
+#category8-item10 { /* Boy Boxers */
+    z-index: 5;
+}
+
+/* Boy/Girl Sweatshirt, Shoes: 6th layer */
+#category4-item1, 
+#category4-item2, 
+#category4-item3, 
+#category4-item4, 
+#category4-item5, 
+#category4-item6, 
+#category4-item7, 
+#category4-item8, 
+#category4-item9, 
+#category4-item10, /* Girl Sweatshirt */
+#category5-item1, 
+#category5-item2, 
+#category5-item3, 
+#category5-item4, 
+#category5-item5, 
+#category5-item6, 
+#category5-item7, 
+#category5-item8, 
+#category5-item9, 
+#category5-item10, /* Boy Sweatshirt */
+#category9-item1, 
+#category9-item2, 
+#category9-item3, 
+#category9-item4, 
+#category9-item5, 
+#category9-item6, 
+#category9-item7, 
+#category9-item8, 
+#category9-item9, 
+#category9-item10, /* Girl Shoes */
+#category10-item1, 
+#category10-item2, 
+#category10-item3, 
+#category10-item4, 
+#category10-item5, 
+#category10-item6, 
+#category10-item7, 
+#category10-item8, 
+#category10-item9, 
+#category10-item10 { /* Boy Shoes */
+    z-index: 6;
+}
+
+/* Boy/Girl Jacket: 8th (outermost) layer */
+#category16-item1, 
+#category16-item2, 
+#category16-item3, 
+#category16-item4, 
+#category16-item5, 
+#category16-item6, 
+#category16-item7, 
+#category16-item8, 
+#category16-item9, 
+#category16-item10, /* Girl Jacket */
+#category17-item1, 
+#category17-item2, 
+#category17-item3, 
+#category17-item4, 
+#category17-item5, 
+#category17-item6, 
+#category17-item7, 
+#category17-item8, 
+#category17-item9, 
+#category17-item10 { /* Boy Jacket */
+    z-index: 8;
+}
+
+/* Accessories (category 20 for girl, 21 for boy) - 9th layer */
+#category20-item1, 
+#category20-item2, 
+#category20-item3, 
+#category20-item4, 
+#category20-item5, 
+#category20-item6, 
+#category20-item7, 
+#category20-item8, 
+#category20-item9, 
+#category20-item10, /* Girl Accessories */
+#category21-item1, 
+#category21-item2, 
+#category21-item3, 
+#category21-item4, 
+#category21-item5, 
+#category21-item6, 
+#category21-item7, 
+#category21-item8, 
+#category21-item9, 
+#category21-item10 { /* Boy Accessories */
+    z-index: 9;
+}
+
+		
+		
+		
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.category img {
+    width: 50px;  /* Adjust the width to make the buttons smaller */
+    height: auto;  /* Keep the aspect ratio of the images */
+    margin: auto;  /* Center the images */
+    cursor: pointer;  /* Keep the pointer cursor */
+    border: 0.5px solid transparent;
+    border-radius: 2px;
+    object-fit: cover;  /* Ensures the image covers the button area without distortion */
+}
+
+
+
+
+.category img:hover {
+    border-color: #3700b3;
+}
+
+
+    </style>
+</head>
+<body>
